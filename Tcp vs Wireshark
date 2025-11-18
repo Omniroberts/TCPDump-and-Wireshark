@@ -1,0 +1,93 @@
+# 🛰️ tcpdump vs Wireshark — Pentester Cheat Sheet
+
+A clean comparison of tcpdump and Wireshark for cybersecurity, pentesting, and networking.
+
+---
+
+## 🔵 tcpdump
+**Command-line packet capture tool.**
+
+### What tcpdump does:
+- Captures network packets in real time
+- Displays packets as text in the terminal
+- Saves packet captures to `.pcap` files
+- Uses fast, powerful capture filters (BPF)
+- Perfect for remote servers and VPN interfaces (tun0)
+
+### When tcpdump is best:
+- SSH sessions  
+- HackTheBox / TryHackMe VPN traffic  
+- Remote Linux servers  
+- Lightweight real-time capture  
+- Quick debugging  
+- Environments where GUI is not available
+
+### Strengths:
+- ✔️ Fast
+- ✔️ Lightweight
+- ✔️ CLI-based
+- ✔️ Ideal for servers & cloud
+- ✔️ Great for capturing traffic to analyze later in Wireshark
+
+### Weaknesses:
+- ❌ No GUI
+- ❌ Harder to visualize streams
+- ❌ Not beginner-friendly for deep analysis
+
+---
+
+## 🟣 Wireshark
+**GUI packet analysis tool.**
+
+### What Wireshark does:
+- Captures AND analyzes packets
+- GUI with color coding and protocol dissection
+- Deep packet inspection (TCP, TLS, DNS, etc.)
+- Reassembles streams (HTTP pages, TCP sessions)
+- Visual flow diagrams and readable breakdowns
+
+### When Wireshark is best:
+- Full packet analysis  
+- Malware/traffic research  
+- Visualizing connections and sessions  
+- Debugging authentication flows  
+- Viewing decrypted traffic (with keys)
+
+### Strengths:
+- ✔️ Visual and beginner-friendly  
+- ✔️ Beautiful color-coded packets  
+- ✔️ Deep protocol analysis  
+- ✔️ Easy filtering and breakdown  
+- ✔️ Reconstructs TCP streams
+
+### Weaknesses:
+- ❌ Heavy on resources  
+- ❌ Not ideal over SSH  
+- ❌ Not great for remote servers  
+- ❌ Too slow for massive captures
+
+---
+
+## 🔥 Quick Comparison Table
+
+| Feature | tcpdump | Wireshark |
+|--------|---------|-----------|
+| Interface | CLI | GUI |
+| Best for | Capturing | Analyzing |
+| Speed | Fast | Slower |
+| Detail | Medium | Extremely detailed |
+| Use on remote server | ✔️ Yes | ❌ No |
+| Use on HTB tun0 | ✔️ Yes | ✔️ Yes |
+| Saves .pcap files | ✔️ Yes | ✔️ Yes |
+| Filtering | BPF (powerful) | Display filters (powerful) |
+
+---
+
+## 🎯 ONE-LINE SUMMARY
+**tcpdump = capture traffic.  
+Wireshark = analyze traffic.**
+
+---
+
+## 🚀 Pentesting Workflow Tip
+1. Use tcpdump to capture traffic on a server or HTB machine:  
