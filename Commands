@@ -1,0 +1,13 @@
+sudo tcpdump -i tun0 -nn
+sudo tcpdump -i eth0 -nn
+sudo tcpdump -i tun0 -nn port 80
+sudo tcpdump -i tun0 -w capture.pcap
+
+Wireshark most used
+http
+tcp.port == 80
+ip.addr == 10.10.10.10
+dns
+icmp
+ftp
+Follow TCP Stream
